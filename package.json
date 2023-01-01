@@ -1,0 +1,50 @@
+{
+  "name": "auto-update",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "juwelrana090",
+        "repo": "electron-app-update"
+      }
+    ],
+    "appId": "com.try.app",
+    "win": {
+      "target": [
+        "zip",
+        "nsis",
+        "msi"
+      ],
+      "icon": "./icons/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "flatpak",
+        "snap",
+        "deb",
+        "rpm"
+      ],
+      "icon": "./icons/icon.ico",
+      "category": "Development"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8",
+    "electron-updater": "^5.3.0"
+  }
+}
